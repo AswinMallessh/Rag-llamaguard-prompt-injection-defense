@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "attack_type": "Broken Access Control",
+    "text": "Attack Category: Broken Access Control\n\nDescription:\nBroken Access Control refers to failures in enforcing authorization policies that prevent users from acting outside their intended privileges. It can allow attackers to access data, escalate privileges, or perform unauthorized operations when authorization checks are missing or incorrectly implemented.\n\nCommon Indicators:\n- Lack of proper server-side access checks\n- Insecure direct object references\n- Privilege escalation due to flawed role logic\n- Missing backend enforcement of rules\n\nSecurity Implication:\nAttackers exploiting broken access control can view or modify sensitive data, bypass restrictions, or escalate privileges, leading to unauthorized access and potential data breaches.\n\nDetection Guidance:\nClassify as UNSAFE when prompts suggest bypassing or manipulating permission checks, accessing unauthorized resources, or escalating privileges beyond allowed roles."
+  },
+  {
+    "id": 2,
+    "attack_type": "Security Misconfiguration",
+    "text": "Attack Category: Security Misconfiguration\n\nDescription:\nSecurity Misconfiguration refers to weaknesses caused by improperly configured systems, services, or environments, such as default accounts, unused features, and overly permissive permissions.\n\nCommon Indicators:\n- Default credentials or open admin services\n- Unremoved sample applications or debug modes left enabled\n- Missing security headers\n- Overly permissive cloud storage permissions\n\nSecurity Implication:\nMisconfigurations expose sensitive data and increase the attack surface, enabling attackers to exploit predictable or insecure settings.\n\nDetection Guidance:\nClassify as UNSAFE when the prompt indicates exploiting system configuration weaknesses, exposing insecure settings, or leveraging default or improper system configurations."
+  },
+  {
+    "id": 3,
+    "attack_type": "Software Supply Chain Failures",
+    "text": "Attack Category: Software Supply Chain Failures\n\nDescription:\nSoftware Supply Chain Failures involve breakdowns or compromises in the process of building, distributing, or updating software. These failures often originate from vulnerabilities or malicious alterations in third-party code, dependencies, build tools, or distribution pipelines.\n\nCommon Indicators:\n- Inclusion of unmaintained or obsolete third-party components\n- Vulnerable dependencies that are not updateable\n- Lack of supply chain dependency verification\n\nSecurity Implication:\nCompromised supply chains can introduce backdoors or insecure artifacts into production systems, enabling attackers to execute malicious code or gain unauthorized control.\n\nDetection Guidance:\nClassify as UNSAFE when prompts imply exploiting dependency weaknesses, compromised build or packaging processes, or using untrusted third-party components."
+  },
+  {
+    "id": 4,
+    "attack_type": "Cryptographic Failures",
+    "text": "Attack Category: Cryptographic Failures\n\nDescription:\nCryptographic Failures encompass weaknesses due to improper or outdated use of cryptographic algorithms, poor key management, or weak cipher configurations that fail to protect data in transit or at rest.\n\nCommon Indicators:\n- Use of deprecated encryption protocols\n- Hard-coded or weak cryptographic keys\n- Poor encryption configuration\n\nSecurity Implication:\nWeak cryptography undermines data confidentiality and integrity, potentially enabling attackers to decrypt sensitive information or tamper with protected data.\n\nDetection Guidance:\nClassify as UNSAFE when prompts refer to bypassing or exploiting weak encryption, poor key handling, or insecure cryptographic implementations."
+  },
+  {
+    "id": 5,
+    "attack_type": "Injection",
+    "text": "Attack Category: Injection\n\nDescription:\nInjection vulnerabilities occur when untrusted input is included in commands or queries, allowing attackers to alter the intended execution flow, such as in SQL, OS command, or template injection.\n\nCommon Indicators:\n- Unvalidated user input integrated into query or command strings\n- Absence of input sanitization or parameterization\n\nSecurity Implication:\nInjection attacks enable unintended command or query execution, leading to data leakage, unauthorized access, or system compromise.\n\nDetection Guidance:\nClassify as UNSAFE when prompts exhibit patterns of unfiltered input affecting commands, queries, or interpreted expressions that could alter execution logic."
+  },
+  {
+    "id": 6,
+    "attack_type": "Insecure Design",
+    "text": "Attack Category: Insecure Design\n\nDescription:\nInsecure Design refers to architectural or systemic weaknesses that result from insufficient security threat modeling, absence of security requirements, or flawed design decisions that introduce vulnerabilities.\n\nCommon Indicators:\n- Lack of threat modeling or security requirement analysis\n- Design choices that do not account for misuse or attack scenarios\n\nSecurity Implication:\nDesign-level flaws create systemic security gaps that can be exploited across multiple components or functions, increasing attack risk.\n\nDetection Guidance:\nClassify as UNSAFE when prompts imply exploitation of architectural weaknesses, absence of threat consideration, or misuse of system designs due to missing security assumptions."
+  },
+  {
+    "id": 7,
+    "attack_type": "Authentication Failures",
+    "text": "Attack Category: Authentication Failures\n\nDescription:\nAuthentication Failures involve weaknesses in verifying user identity, such as weak password policies, broken login flows, or session management errors.\n\nCommon Indicators:\n- Weak or absent credential validation\n- Session hijacking or insecure token handling\n\nSecurity Implication:\nAuthentication failures allow attackers to impersonate users, bypass login protections, or persist unauthorized sessions.\n\nDetection Guidance:\nClassify as UNSAFE when prompts suggest bypassing authentication checks, exploiting weak login flows, or undermining identity verification mechanisms."
+  },
+  {
+    "id": 8,
+    "attack_type": "Software or Data Integrity Failures",
+    "text": "Attack Category: Software or Data Integrity Failures\n\nDescription:\nSoftware or Data Integrity Failures arise when applications fail to verify the authenticity or integrity of software components or data, such as untrusted code, unchecked updates, or insecure deserialization.\n\nCommon Indicators:\n- Lack of integrity verification for software updates\n- Dependencies from untrusted repositories without validation\n- Unchecked data deserialization\n\nSecurity Implication:\nFailing to verify integrity can allow malicious modifications to be executed, leading to unauthorized code execution or system compromise.\n\nDetection Guidance:\nClassify as UNSAFE when prompts indicate exploiting unverified code, untrusted dependencies, or unsupported data integrity protections."
+  },
+  {
+    "id": 9,
+    "attack_type": "Security Logging and Alerting Failures",
+    "text": "Attack Category: Security Logging and Alerting Failures\n\nDescription:\nSecurity Logging and Alerting Failures occur when applications lack sufficient mechanisms for logging security-relevant events or generating alerts, preventing timely detection and response to incidents.\n\nCommon Indicators:\n- Absence of audit logs for critical actions\n- Weak alerting mechanisms for breaches\n\nSecurity Implication:\nPoor logging and alerting impede incident detection and response, allowing attackers to persist undetected or damage systems without triggering alarms.\n\nDetection Guidance:\nClassify as UNSAFE when prompts imply exploiting insufficient logging or alerting to evade detection or delay response to security events."
+  },
+  {
+    "id": 10,
+    "attack_type": "Mishandling of Exceptional Conditions",
+    "text": "Attack Category: Mishandling of Exceptional Conditions\n\nDescription:\nMishandling of Exceptional Conditions refers to weaknesses in how an application manages errors, failures, or unexpected inputs, such as failing-open error handling or incomplete recovery logic.\n\nCommon Indicators:\n- Inconsistent error handling policies\n- Failure to validate error contexts\n- Logic flaws triggered by unexpected inputs\n\nSecurity Implication:\nPoor exception handling can result in crashes, logic bypasses, data corruption, or denial-of-service conditions.\n\nDetection Guidance:\nClassify as UNSAFE when prompts suggest manipulating error handling behavior, triggering unexpected failure modes, or exploiting logic gaps exposed during exceptional conditions."
+  }
+]

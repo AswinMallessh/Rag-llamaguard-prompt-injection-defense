@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 \# Retrieval-Augmented Prompt Injection Defense for LLMs
 
 
